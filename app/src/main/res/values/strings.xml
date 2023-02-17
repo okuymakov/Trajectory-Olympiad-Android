@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Trajectory Olympiad</string>
     <string name="toolbar_title_services">Проекты VK</string>
+    <string name="service_icon_cd">Service icon</string>
 </resources>
