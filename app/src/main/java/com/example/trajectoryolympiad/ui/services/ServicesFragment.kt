@@ -102,6 +102,13 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>() {
     private fun navigateToServiceDetails(service: VKService) {
         val fragment = ServiceDetailsFragment.newInstance(service)
         parentFragmentManager.commit {
+            setCustomAnimations(
+                R.anim.slide_out,
+                R.anim.fade_out,
+                R.anim.slide_out,
+                R.anim.fade_out,
+            )
+
             replace(R.id.nav_host_fragment, fragment)
             setReorderingAllowed(true)
             addToBackStack(null)
