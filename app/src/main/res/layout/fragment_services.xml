@@ -7,7 +7,7 @@
     tools:context=".ui.services.ServicesFragment">
 
     <LinearLayout
-        android:id="@+id/placeholder"
+        android:id="@+id/error_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -20,24 +20,25 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/no_internet_error_msg"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:text="@string/no_internet_error_msg" />
 
         <TextView
             android:id="@+id/retry_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="?attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
             android:paddingVertical="@dimen/normal_100"
             android:text="@string/btn_retry"
-            android:textColor="@color/blue"
+            android:textColorHighlight="@color/white"
+            android:textColor="@color/text_btn"
             android:textSize="16sp" />
 
     </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/services_list"
@@ -46,4 +47,11 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         tools:listitem="@layout/service_item" />
+
+    <ProgressBar
+        android:id="@+id/loading_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateTint="@android:color/black" />
 </FrameLayout>
