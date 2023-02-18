@@ -5,12 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
+import com.example.trajectoryolympiad.MainActivity
+import com.example.trajectoryolympiad.R
 import com.example.trajectoryolympiad.base.BaseFragment
 import com.example.trajectoryolympiad.base.launchOnLifecycle
+import com.example.trajectoryolympiad.data.models.VKService
 import com.example.trajectoryolympiad.data.network.Response
 import com.example.trajectoryolympiad.databinding.FragmentServicesBinding
+import com.example.trajectoryolympiad.ui.servicedetails.ServiceDetailsFragment
 import com.example.trajectoryolympiad.ui.services.adapter.ServicesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,8 +28,19 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (requireActivity() as MainActivity).toolbarTitle =
+            resources.getString(R.string.toolbar_title_services)
         init()
-        val adapter = ServicesAdapter()
+        setupList()
+
+    }
+
+    private fun init() {
+        viewModel.fetchServices()
+    }
+
+    private fun setupList() {
+        val adapter = ServicesAdapter(::onClick)
         binding.servicesList.adapter = adapter
         launchOnLifecycle(Lifecycle.State.STARTED) {
             viewModel.services.collect { res ->
@@ -39,10 +55,18 @@ class ServicesFragment : BaseFragment<FragmentServicesBinding>() {
 
             }
         }
-
     }
 
-    private fun init() {
-        viewModel.fetchServices()
+    private fun onClick(service: VKService) {
+        navigateToServiceDetails(service)
+    }
+
+    private fun navigateToServiceDetails(service: VKService) {
+        val fragment = ServiceDetailsFragment.newInstance(service)
+        parentFragmentManager.commit{
+            replace(R.id.nav_host_fragment, fragment)
+            setReorderingAllowed(true)
+            addToBackStack(null)
+        }
     }
 }
