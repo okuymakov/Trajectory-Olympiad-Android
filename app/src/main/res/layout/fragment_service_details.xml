@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/normal_100"
+    tools:context=".ui.servicedetails.ServiceDetailsFragment">
+
+    <ImageView
+        android:id="@+id/service_icon"
+        android:layout_marginTop="@dimen/normal_125"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/service_icon_cd"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/service_name"
+        android:layout_marginVertical="@dimen/normal_100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        tools:text="ВКонтакте" />
+
+    <TextView
+        android:id="@+id/service_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        tools:text="Самая популярная соцсеть и первое суперприложение в Роcсии" />
+
+    <TextView
+        android:id="@+id/service_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/normal_100"
+        android:autoLink="web"
+        android:textSize="20sp"
+        tools:text="https://vk.com/" />
+
+
+</LinearLayout>
