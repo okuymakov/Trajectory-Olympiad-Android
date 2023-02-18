@@ -2,4 +2,7 @@
     <string name="app_name">Trajectory Olympiad</string>
     <string name="toolbar_title_services">Проекты VK</string>
     <string name="service_icon_cd">Service icon</string>
+    <string name="no_internet_error_msg">Ошибка загрузки. Проверьте подключение к сети и повторите попытку</string>
+    <string name="unexpected_error_msg">Что-то пошло не так. Повторите попытку</string>
+    <string name="btn_retry">Повторить попытку</string>
 </resources>
