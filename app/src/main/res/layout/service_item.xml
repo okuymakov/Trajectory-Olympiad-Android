@@ -12,7 +12,8 @@
         android:id="@+id/service_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_margin="@dimen/normal_100"
+        android:layout_marginHorizontal="@dimen/normal_100"
+        android:layout_marginVertical="@dimen/small_100"
         android:contentDescription="@string/service_icon_cd"
         tools:src="@tools:sample/avatars" />
 
