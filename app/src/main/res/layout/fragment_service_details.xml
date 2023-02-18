@@ -9,19 +9,19 @@
 
     <ImageView
         android:id="@+id/service_icon"
-        android:layout_marginTop="@dimen/normal_125"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/normal_125"
         android:contentDescription="@string/service_icon_cd"
         tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/service_name"
-        android:layout_marginVertical="@dimen/normal_100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginVertical="@dimen/normal_100"
         android:textSize="20sp"
         tools:text="ВКонтакте" />
 
@@ -37,8 +37,10 @@
         android:id="@+id/service_url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/normal_100"
         android:autoLink="web"
+        android:paddingVertical="@dimen/normal_100"
+        android:textColorLink="@color/text_btn"
+        android:textColorHighlight="@color/white"
         android:textSize="20sp"
         tools:text="https://vk.com/" />
 
